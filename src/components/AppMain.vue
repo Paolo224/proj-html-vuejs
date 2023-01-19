@@ -1,6 +1,11 @@
 <script>
+import AppMeetDoctors from './AppMeetDoctors.vue'
 
 export default {
+    components: {
+        AppMeetDoctors,
+    },
+
     data() {
         return {
             cardsMain: [
@@ -37,22 +42,25 @@ export default {
 </script>
 
 <template>
-    <h1>
-        Welcome to Avada Health
-    </h1>
-    <p class="title">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-        aperiam, eaque ipsa quae ab illo
-    </p>
-    <section class="cards">
-        <div v-for="card in cardsMain" class="card">
-            <img :src="getImagePath(card.img)" alt="">
-            <h4>{{ card.title }}</h4>
-            <h5>
-                {{ card.info }}
-            </h5>
-        </div>
+    <section class="container">
+        <h1>
+            Welcome to Avada Health
+        </h1>
+        <p class="title">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+            aperiam, eaque ipsa quae ab illo
+        </p>
+        <section class="cards">
+            <div v-for="card in cardsMain" class="card">
+                <img :src="getImagePath(card.img)" alt="">
+                <h4>{{ card.title }}</h4>
+                <h5>
+                    {{ card.info }}
+                </h5>
+            </div>
+        </section>
     </section>
+    <AppMeetDoctors />
 </template>
 
 <style lang="scss" scoped>
@@ -73,7 +81,7 @@ section.cards {
     div.card {
         width: calc(100% / 4);
         padding: .8rem;
-        margin-top: 2rem;
+        margin: 2rem 0;
         display: flex;
         flex-direction: column;
         align-items: center;
