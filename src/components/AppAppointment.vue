@@ -111,8 +111,9 @@ section.appointment {
             color: $white;
             background-color: $pelorous3;
             text-transform: uppercase;
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             font-weight: 300;
+            border: none;
         }
     }
 }

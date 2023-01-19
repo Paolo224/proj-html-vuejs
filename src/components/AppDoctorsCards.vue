@@ -98,18 +98,18 @@ div.doctor-card {
 
         div.socials {
             display: flex;
-        }
 
-        div.social {
-            width: 25px;
-            height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: $white;
-            margin: 0 .5rem;
-            background-color: $pelorous1;
-            border-radius: .2rem;
+            div.social {
+                width: 25px;
+                height: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+                margin: 0 .5rem;
+                background-color: $pelorous1;
+                border-radius: .2rem;
+            }
         }
     }
 }

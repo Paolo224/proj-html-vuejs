@@ -41,21 +41,21 @@ export default {
                     img: 'wave-divider',
                     info: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque',
                     button: 'learn more',
-                    color: '$pelorous3'
+                    color: 'class-1'
                 },
                 {
                     title: 'Expert Diagnostic',
                     img: 'wave-divider',
                     info: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque',
                     button: 'learn more',
-                    color: '$pelorous2'
+                    color: 'class-2'
                 },
                 {
                     title: 'Superb rehabilitation',
                     img: 'wave-divider',
                     info: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque',
                     button: 'learn more',
-                    color: '$pelorous1'
+                    color: 'class-3'
                 },
             ],
         }
@@ -70,56 +70,59 @@ export default {
 </script>
 
 <template>
-    <section class="container">
-        <h1>
-            Welcome to Avada Health
-        </h1>
-        <p class="title">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-            aperiam, eaque ipsa quae ab illo
-        </p>
-        <section class="cards">
-            <div v-for="card in cardsMain" class="card">
-                <img :src="getImagePath(card.img)" alt="">
-                <h4>{{ card.title }}</h4>
-                <h5>
-                    {{ card.info }}
-                </h5>
+    <main>
+        <section class="container">
+            <h1>
+                Welcome to Avada Health
+            </h1>
+            <p class="title">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem
+                aperiam, eaque ipsa quae ab illo
+            </p>
+            <section class="cards">
+                <div v-for="card in cardsMain" class="card">
+                    <img :src="getImagePath(card.img)" alt="">
+                    <h4>{{ card.title }}</h4>
+                    <h5>
+                        {{ card.info }}
+                    </h5>
+                </div>
+            </section>
+        </section>
+        <AppMeetDoctors />
+        <AppService />
+        <section class="tour">
+            <div class="text-tour">
+                <img src="../assets/img/icon-7.png" alt="image">
+                <h1>
+                    our health service
+                </h1>
+                <hr>
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                    totam
+                    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                </p>
+                <img src="../assets/img/play-icon.png" alt="image">
             </div>
         </section>
-    </section>
-    <AppMeetDoctors />
-    <AppService />
-    <section class="tour">
-        <div class="text-tour">
-            <img src="../assets/img/icon-7.png" alt="image">
-            <h1>
-                our health service
-            </h1>
-            <hr>
-            <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                totam
-                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-            </p>
-            <img src="../assets/img/play-icon.png" alt="image">
-        </div>
-    </section>
-    <section class="squares">
-        <div v-for="square in bigSquares" class="square" :style="{ 'background-color': square.color }">
-            <h1>
-                {{ square.title }}
-            </h1>
-            <img :src="getImagePath(square.img)" alt="image">
-            <p>
-                {{ square.info }}
-            </p>
-            <button :style="{ 'background-color': square.color }">
-                {{ square.button }}
-            </button>
-        </div>
-    </section>
-    <AppAppointment />
+        <section class="squares">
+            <div v-for="square in bigSquares" class="square" :class="square.color">
+                <h1>
+                    {{ square.title }}
+                </h1>
+                <img :src="getImagePath(square.img)" alt="image">
+                <p>
+                    {{ square.info }}
+                </p>
+                <button :class="square.color">
+                    {{ square.button }}
+                </button>
+            </div>
+        </section>
+        <AppAppointment />
+    </main>
 </template>
 
 <style lang="scss" scoped>
@@ -213,7 +216,6 @@ section.squares {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: $pelorous1;
         color: $white;
 
         h1 {
@@ -241,5 +243,17 @@ section.squares {
             padding: .5rem 0;
         }
     }
+}
+
+.class-1 {
+    background-color: $pelorous1;
+}
+
+.class-2 {
+    background-color: $pelorous3;
+}
+
+.class-3 {
+    background-color: $pelorous2;
 }
 </style>
