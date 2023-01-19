@@ -1,11 +1,13 @@
 <script>
 import AppMeetDoctors from './AppMeetDoctors.vue'
 import AppService from './AppService.vue'
+import AppAppointment from './AppAppointment.vue'
 
 export default {
     components: {
         AppMeetDoctors,
         AppService,
+        AppAppointment
     },
 
     data() {
@@ -30,6 +32,30 @@ export default {
                     img: 'icon-4',
                     title: 'complementary therapies',
                     info: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium'
+                },
+            ],
+
+            bigSquares: [
+                {
+                    title: 'Emergency Care',
+                    img: 'wave-divider',
+                    info: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque',
+                    button: 'learn more',
+                    color: '$pelorous3'
+                },
+                {
+                    title: 'Expert Diagnostic',
+                    img: 'wave-divider',
+                    info: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque',
+                    button: 'learn more',
+                    color: '$pelorous2'
+                },
+                {
+                    title: 'Superb rehabilitation',
+                    img: 'wave-divider',
+                    info: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque',
+                    button: 'learn more',
+                    color: '$pelorous1'
                 },
             ],
         }
@@ -64,9 +90,41 @@ export default {
     </section>
     <AppMeetDoctors />
     <AppService />
+    <section class="tour">
+        <div class="text-tour">
+            <img src="../assets/img/icon-7.png" alt="image">
+            <h1>
+                our health service
+            </h1>
+            <hr>
+            <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+            </p>
+            <img src="../assets/img/play-icon.png" alt="image">
+        </div>
+    </section>
+    <section class="squares">
+        <div v-for="square in bigSquares" class="square" :style="{ 'background-color': square.color }">
+            <h1>
+                {{ square.title }}
+            </h1>
+            <img :src="getImagePath(square.img)" alt="image">
+            <p>
+                {{ square.info }}
+            </p>
+            <button :style="{ 'background-color': square.color }">
+                {{ square.button }}
+            </button>
+        </div>
+    </section>
+    <AppAppointment />
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
+
 h1 {
     text-align: center;
     font-weight: 300;
@@ -101,6 +159,86 @@ section.cards {
             font-weight: 300;
             text-align: justify;
             line-height: 1.3rem;
+        }
+    }
+}
+
+section.tour {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 600px;
+    background-image: url(../assets/img/paralax-bg-tour-facilities.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    div.text-tour {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $white;
+
+        img {
+            width: 60px;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        hr {
+            background-color: $limed-spruce;
+            width: 30%;
+            margin: 1rem 0;
+        }
+
+        p {
+            width: 50%;
+            text-align: center;
+            line-height: 1.8rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+section.squares {
+    display: flex;
+
+    div.square {
+        width: calc(100% / 3);
+        padding: 2.5rem 1.6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $pelorous1;
+        color: $white;
+
+        h1 {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        img {
+            margin: .7rem 0;
+        }
+
+        button {
+            text-transform: uppercase;
+            width: 50%;
+            color: $white;
+            padding: .7rem .4rem;
+            font-size: .8rem;
+            border: 2px solid white;
+        }
+
+        p {
+            text-align: center;
+            line-height: 1.8rem;
+            padding: .5rem 0;
         }
     }
 }
