@@ -1,9 +1,11 @@
 <script>
 import AppMeetDoctors from './AppMeetDoctors.vue'
+import AppService from './AppService.vue'
 
 export default {
     components: {
         AppMeetDoctors,
+        AppService,
     },
 
     data() {
@@ -61,6 +63,7 @@ export default {
         </section>
     </section>
     <AppMeetDoctors />
+    <AppService />
 </template>
 
 <style lang="scss" scoped>

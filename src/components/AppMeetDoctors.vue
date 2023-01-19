@@ -31,6 +31,7 @@ export default {
 section.bg-gray {
     background-color: $french-gray;
     padding: 3rem;
+    margin-bottom: 3rem;
 
     div.meet-doctors-title {
         display: flex;
