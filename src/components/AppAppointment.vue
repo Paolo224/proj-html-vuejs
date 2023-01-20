@@ -117,4 +117,11 @@ section.appointment {
         }
     }
 }
+
+button:hover {
+    transition: all .3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.05);
+    cursor: pointer;
+}
 </style>

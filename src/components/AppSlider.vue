@@ -26,6 +26,8 @@ export default {
             <div class="slide">
                 <img v-for="img in imgSlider" :src="getImagePath(img)" alt="">
             </div>
+            <img class="shadow-left" src="../assets/img/image (1).png" alt="">
+            <img class="shadow-right" src="../assets/img/image (1).png" alt="">
         </div>
     </section>
 </template>
@@ -40,6 +42,7 @@ section.slider {
     div.slider-container {
         padding: .4rem;
         width: 50%;
+        position: relative;
 
         div.slide {
             display: flex;
@@ -50,6 +53,20 @@ section.slider {
                 width: 22%;
             }
 
+        }
+
+        img.shadow-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+
+        img.shadow-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
         }
     }
 }

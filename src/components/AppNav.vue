@@ -64,7 +64,7 @@ button:hover {
 
 li:hover {
     transition: all .3s ease-in-out;
-    color: $pelorous3;
+    color: $pelorous1;
     cursor: pointer;
 }
 </style>

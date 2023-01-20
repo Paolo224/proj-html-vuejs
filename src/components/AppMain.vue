@@ -106,7 +106,7 @@ export default {
                     totam
                     rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
                 </p>
-                <img src="../assets/img/play-icon.png" alt="image">
+                <a href="https://www.youtube.com/"><img src="../assets/img/play-icon.png" alt="image"></a>
             </div>
         </section>
         <section class="squares">
@@ -258,5 +258,12 @@ section.squares {
 
 .class-3 {
     background-color: $pelorous2;
+}
+
+button:hover {
+    transition: all .3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 </style>
