@@ -2,12 +2,14 @@
 import AppMeetDoctors from './AppMeetDoctors.vue'
 import AppService from './AppService.vue'
 import AppAppointment from './AppAppointment.vue'
+import AppSlider from './AppSlider.vue'
 
 export default {
     components: {
         AppMeetDoctors,
         AppService,
-        AppAppointment
+        AppAppointment,
+        AppSlider
     },
 
     data() {
@@ -122,6 +124,7 @@ export default {
             </div>
         </section>
         <AppAppointment />
+        <AppSlider />
     </main>
 </template>
 
